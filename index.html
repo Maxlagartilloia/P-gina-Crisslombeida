@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico -->
+    <title>Criss Lombeida | Solidaridad Digital y Ayuda a Emprendedores</title>
+    <meta name="description" content="Regalamos páginas web gratuitas a emprendedores para impulsar su inicio en el mundo digital. Únete a la misión de solidaridad digital de Criss Lombeida.">
+    <meta name="keywords" content="Criss Lombeida, solidaridad digital, páginas web gratuitas, ayuda a emprendedores, marketing digital, Ecuador, Shushufindi, CL Tech Solutions">
+    <meta name="author" content="Criss Lombeida">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://crisslombeida.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Criss Lombeida | Solidaridad Digital para Emprendedores">
+    <meta property="og:description" content="Regalamos páginas web gratuitas a emprendedores que sueñan en grande. Historias reales, casos reales, solidaridad digital real.">
+    <meta property="og:url" content="https://crisslombeida.com/">
+    <meta property="og:image" content="https://i.postimg.cc/dtmDQrsz/IMG_0318.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Criss Lombeida | Solidaridad Digital para Emprendedores">
+    <meta name="twitter:description" content="Páginas web gratuitas para emprendedores. La misión digital de Criss Lombeida.">
+    <meta name="twitter:image" content="https://i.postimg.cc/dtmDQrsz/IMG_0318.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https://i.postimg.cc/59QpJsBB/IMG_0314-removebg_preview.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Configuración de Tema y Tipografía -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+        :root {
+            --color-dark: #081733;
+            --color-medium: #0a2252;
+            --color-ink: #e6f0ff;
+
+            --color-neon-cyan: #00FFFF;
+            --color-neon-magenta: #FF00FF;
+
+            --color-accent: #9cc9ff;
+            --color-cta: #ffffff;
+            --color-cta-dark: #081733;
+
+            --bg-grad1: #0a2252;
+            --bg-grad2: #081733;
+            --bg-grad3: #061225;
+        }
+
+        body {
+            font-family: 'Inter', 'Poppins', sans-serif;
+            color: var(--color-ink);
+            background-color: var(--color-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .fixed-background {
+            background-attachment: fixed;
+            position: fixed; inset: 0; z-index: -1;
+            background: linear-gradient(135deg, var(--color-dark) 0%, #060b18 50%, var(--color-dark) 100%);
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 0L0 100M0 0L100 100' stroke='%230A2252' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: 50px 50px;
+        }
+
+        .neon-lines-container {
+            position: absolute;
+            inset: 0;
+            opacity: 0.5;
+            transition: transform 0.2s ease-out;
+        }
+        .neon-line {
+            position: absolute;
+            height: 3px;
+            width: 40vw;
+            transform-origin: left center;
+            box-shadow: 0 0 8px currentColor, 0 0 10px currentColor;
+            opacity: 0.7;
+        }
+        .neon-line:nth-child(1) { top: 10%; left: 0%; background-color: var(--color-neon-cyan); transform: rotate(10deg); }
+        .neon-line:nth-child(2) { top: 30%; right: 0%; background-color: var(--color-neon-magenta); transform: rotate(-15deg); transform-origin: right center; }
+        .neon-line:nth-child(3) { bottom: 20%; left: 10%; background-color: var(--color-neon-cyan); transform: rotate(-5deg); }
+        .neon-line:nth-child(4) { bottom: 10%; right: 5%; background-color: var(--color-neon-magenta); transform: rotate(15deg); transform-origin: right center; }
+
+        .btn-primary {
+            background-color: transparent;
+            color: var(--color-cta);
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .btn-primary:hover {
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+        
+        .btn-secondary {
+            border: 1px solid var(--color-accent);
+            color: var(--color-accent);
+            transition: 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(156,201,255,0.1);
+        }
+
+        .btn-social {
+            transition: 0.3s ease;
+            font-size: 1.1rem;
+        }
+        .btn-social:hover {
+            transform: translateY(-3px) scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .bg-tiktok { background-color: #000; border: 2px solid var(--color-neon-cyan); color: var(--color-neon-cyan); }
+        .bg-facebook { background-color: #1877F2; border: 2px solid #1877F2; }
+        .bg-youtube { background-color: #FF0000; border: 2px solid #FF0000; }
+
+        /* Animación flotante del logo */
+        .logo-hero {
+            animation: floatLogo 4s ease-in-out infinite;
+        }
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+    </style>
+
+    <!-- JSON-LD: Datos estructurados de Persona / Marca Personal -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Criss Lombeida",
+      "url": "https://crisslombeida.com/",
+      "image": "https://i.postimg.cc/dtmDQrsz/IMG_0318.jpg",
+      "jobTitle": "Mentor Digital y Solidario",
+      "description": "Creador de la misión de solidaridad digital que regala páginas web a emprendedores.",
+      "sameAs": [
+        "https://www.instagram.com/criss_lombeida2",
+        "https://www.facebook.com/share/1F43fYgXZK/?mibextid=wwXIfr",
+        "https://youtube.com/@crisslombeida?si=44fB-GXPEPNRd9WL",
+        "https://www.tiktok.com/@copiermaster.cg.e"
+      ]
+    }
+    </script>
+
+    <!-- TikTok Pixel (reemplaza YOUR_TIKTOK_PIXEL_ID con tu ID real) -->
+    <script>
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        var ttq = w[t] = w[t] || [];
+        ttq.methods = ["page","track","identify","instances","debug","on","off","upload"];
+        ttq.setAndDefer = function(t, e) {
+          t[e] = function() {
+            t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+          }
+        };
+        for (var i = 0; i < ttq.methods.length; i++) {
+          ttq.setAndDefer(ttq, ttq.methods[i])
+        }
+        ttq.instance = function(t) {
+          var e = ttq._i[t] || [];
+          for (var n = 0; n < ttq.methods.length; n++) {
+            ttq.setAndDefer(e, ttq.methods[n])
+          }
+          return e
+        };
+        ttq.load = function(e, n) {
+          var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
+          ttq._i = ttq._i || {};
+          ttq._i[e] = [];
+          ttq._i[e]._u = i;
+          ttq._t = ttq._t || {};
+          ttq._t[e] = +new Date;
+          ttq._o = ttq._o || {};
+          ttq._o[e] = n || {};
+          var o = document.createElement("script");
+          o.type = "text/javascript";
+          o.async = true;
+          o.src = i + "?sdkid=" + e + "&lib=" + t;
+          var a = document.getElementsByTagName("script")[0];
+          a.parentNode.insertBefore(o, a)
+        };
+        ttq.load('YOUR_TIKTOK_PIXEL_ID');
+        ttq.page();
+      }(window, document, 'ttq');
+    </script>
+
+    <!-- Google Analytics 4 (reemplaza G-XXXXXXXXXX por tu ID real) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+</head>
+<body class="antialiased">
+
+    <!-- Fondo -->
+    <div class="fixed-background">
+        <div id="neon-lines" class="neon-lines-container">
+            <div class="neon-line"></div>
+            <div class="neon-line"></div>
+            <div class="neon-line"></div>
+            <div class="neon-line"></div>
+        </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="relative max-w-7xl mx-auto px-4">
+
+        <!-- HEADER -->
+        <header class="text-center py-2">
+            <div class="flex flex-col items-center justify-center">
+                <img src="https://i.postimg.cc/7b8H1Rbm/IMG-0310-removebg-preview.png"
+                     class="h-28 sm:h-40 lg:h-[18rem] logo-hero"
+                     alt="Logo Criss Lombeida">
+                <p class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-white -mt-4">Criss Lombeida</p>
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main class="space-y-16 pt-4 pb-16">
+
+            <!-- HERO -->
+            <section id="hero" class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="md:order-1 order-2 text-center md:text-left">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white mb-6">
+                        Páginas web gratuitas para que tu emprendimiento despegue.
+                    </h1>
+                    <p class="text-base sm:text-xl text-gray-300 mb-8">
+                        Únete a nuestra misión de solidaridad digital. Regalamos presencia en Internet para que te enfoques en crecer y servir a tu comunidad.
+                    </p>
+                    <div class="flex flex-col sm:flex-row sm:space-x-4 justify-center md:justify-start space-y-4 sm:space-y-0">
+                        <a href="#casos" class="btn-primary px-6 py-3 rounded-2xl font-semibold text-lg">
+                            Ver casos reales →
+                        </a>
+                        <a href="https://wa.me/593999630862?text=Hola%20Criss%2C%20quiero%20mi%20p%C3%A1gina%20web"
+                           target="_blank"
+                           class="btn-secondary px-6 py-3 rounded-2xl font-semibold text-lg">
+                            Quiero mi página web →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:order-2 order-1 flex justify-center">
+                    <div class="relative w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden shadow-2xl"
+                         style="box-shadow: 0 0 40px rgba(156, 201, 255, 0.4);">
+                        <img src="https://i.postimg.cc/dtmDQrsz/IMG_0318.jpg"
+                             class="w-full h-full object-cover"
+                             alt="Foto de Criss Lombeida con emprendedores">
+                    </div>
+                </div>
+            </section>
+
+            <!-- PORTAFOLIO -->
+            <section id="casos" class="pt-10">
+                <h2 class="text-4xl font-bold text-center text-white mb-12">Portafolio de Contribución</h2>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <article class="card p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm text-center">
+                        <span class="text-5xl" aria-hidden="true">🍌</span>
+                        <h3 class="text-xl font-semibold text-white mb-2">Valú Chocobananas</h3>
+                        <p class="text-gray-300 text-sm mb-4">Emprendimiento dulce que ahora también vende online.</p>
+                        <a href="https://valuchocobananas.crisslombeida.com/"
+                           target="_blank"
+                           class="btn-secondary px-6 py-2 rounded-xl text-sm">
+                            Ver sitio
+                        </a>
+                    </article>
+
+                    <article class="card p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm text-center">
+                        <span class="text-5xl" aria-hidden="true">🔐</span>
+                        <h3 class="text-xl font-semibold text-white mb-2">Cerrajería Totti</h3>
+                        <p class="text-gray-300 text-sm mb-4">Seguridad y cerrajería con presencia digital.</p>
+                        <a href="https://cerrajeriatotti.crisslombeida.com/"
+                           target="_blank"
+                           class="btn-secondary px-6 py-2 rounded-xl text-sm">
+                            Ver sitio
+                        </a>
+                    </article>
+
+                    <article class="card p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm text-center">
+                        <span class="text-5xl" aria-hidden="true">🔥</span>
+                        <h3 class="text-xl font-semibold text-white mb-2">Parrilladas Aracely</h3>
+                        <p class="text-gray-300 text-sm mb-4">Restaurante de carnes listo para atraer más clientes.</p>
+                        <a href="#"
+                           class="btn-secondary px-6 py-2 rounded-xl text-sm">
+                            Ver sitio
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- VIDEOS -->
+            <section id="videos" class="pt-10">
+                <h2 class="text-4xl font-bold text-center text-white mb-12">Videos & Testimonios</h2>
+
+                <div class="grid sm:grid-cols-3 gap-6">
+
+                    <!-- VIDEO 1 -->
+                    <a href="https://www.tiktok.com/@copiermaster.cg.e/video/7569787603541658888"
+                       target="_blank" rel="noopener noreferrer"
+                       class="relative aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm">
+                        <img src="https://i.postimg.cc/9MYj9fZN/IMG_0387.jpg"
+                             class="absolute inset-0 w-full h-full object-cover opacity-90"
+                             alt="Video testimonio Valú Chocobananas">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="p-6 rounded-full bg-white/30 backdrop-blur-sm">
+                                <i class="fa fa-play text-white text-3xl"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- VIDEO 2 -->
+                    <a href="https://vm.tiktok.com/ZMAvbrvTn/"
+                       target="_blank" rel="noopener noreferrer"
+                       class="relative aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm">
+                        <img src="https://i.postimg.cc/Bvf3T3Cp/IMG_0180.jpg"
+                             class="absolute inset-0 w-full h-full object-cover opacity-90"
+                             alt="Video misión solidaridad digital">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="p-6 rounded-full bg-white/30 backdrop-blur-sm">
+                                <i class="fa fa-play text-white text-3xl"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- TESTIMONIO -->
+                    <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm p-6 text-center">
+                        <img src="https://i.postimg.cc/yxJrFXV0/diamond.png"
+                             class="w-20 h-20 mx-auto mb-4"
+                             alt="Icono de diamante">
+                        <p class="text-sm font-semibold text-[#9cc9ff] mb-2">Marca con visión</p>
+                        <blockquote class="text-gray-200 italic text-sm mb-4">
+                            "Habíamos invertido en tantos intentos fallidos. Criss no solo nos dio una web, nos dio una estrategia clara y humana."
+                        </blockquote>
+                        <p class="text-gray-300 text-xs">- David R. (Socio fundador)</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- PROPÓSITO -->
+            <section id="proposito" class="pt-10">
+                <h2 class="text-4xl font-bold text-center text-white mb-12">Nuestra Misión</h2>
+                <div class="p-10 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl text-center max-w-4xl mx-auto">
+                    <p class="text-xl text-gray-200 mb-6">
+                        Soy Criss Lombeida y estoy recorriendo negocios regalándoles su primera página web gratuita,
+                        porque creo en los emprendedores que sueñan en grande.
+                    </p>
+                    <p class="text-base text-gray-300 mb-6">
+                        Si ya tienes un negocio que quiere crecer más rápido, también puedo ayudarte con herramientas profesionales para vender más y automatizar tus procesos.
+                    </p>
+                    <a href="#contacto"
+                       class="btn-secondary px-8 py-3 rounded-2xl font-semibold text-lg mt-2 inline-block">
+                        ¡Quiero mi página gratuita! →
+                    </a>
+                </div>
+            </section>
+
+            <!-- REDES -->
+            <section id="redes" class="pt-10">
+                <h2 class="text-4xl font-bold text-center text-white mb-12">Sígueme en Redes</h2>
+                <p class="text-center text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Mira los casos de éxito, el proceso de entrega de páginas web gratuitas y los consejos para emprendedores que quieren crecer de forma real.
+                </p>
+
+                <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-6">
+
+                    <a href="https://www.tiktok.com/@copiermaster.cg.e"
+                       target="_blank"
+                       class="btn-social bg-tiktok px-8 py-4 rounded-full flex items-center justify-center space-x-3 w-full max-w-xs">
+                        <i class="fab fa-tiktok text-xl"></i>
+                        <span class="font-bold">TikTok</span>
+                    </a>
+
+                    <a href="https://youtube.com/@crisslombeida?si=44fB-GXPEPNRd9WL"
+                       target="_blank"
+                       class="btn-social bg-youtube px-8 py-4 rounded-full flex items-center justify-center space-x-3 w-full max-w-xs text-white">
+                        <i class="fab fa-youtube text-xl"></i>
+                        <span class="font-bold">YouTube</span>
+                    </a>
+
+                    <a href="https://www.facebook.com/share/1F43fYgXZK/?mibextid=wwXIfr"
+                       target="_blank"
+                       class="btn-social bg-facebook px-8 py-4 rounded-full flex items-center justify-center space-x-3 w-full max-w-xs text-white">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                        <span class="font-bold">Facebook</span>
+                    </a>
+
+                    <a href="https://www.instagram.com/criss_lombeida2?igsh=MWdvbzNvMWF1cTdscA%3D%3D&utm_source=qr"
+                       target="_blank"
+                       class="btn-social px-8 py-4 rounded-full flex items-center justify-center space-x-3 w-full max-w-xs text-white border-2 border-pink-500"
+                       style="background-color:#E1306C;">
+                        <i class="fab fa-instagram text-xl"></i>
+                        <span class="font-bold">Instagram</span>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- COPIERMASTER -->
+            <section id="copiermaster" class="pt-10">
+                <div class="p-10 rounded-2xl bg-[#030916]/90 border border-[#9cc9ff]/40 backdrop-blur-sm shadow-2xl max-w-5xl mx-auto text-center">
+                    <h2 class="text-4xl font-extrabold text-white mb-4">Cuando tu empresa está lista para el siguiente nivel</h2>
+
+                    <p class="text-gray-300 mb-6 text-base sm:text-lg max-w-3xl mx-auto">
+                        Además de regalar páginas web a emprendedores, también lidero
+                        <span class="text-[#9cc9ff] font-semibold">Copiermaster C&G Soluciones Digitales S.A.</span>,
+                        una empresa especializada en servicios de impresión, copiado y soluciones digitales para instituciones que trabajan a gran escala.
+                    </p>
+
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://copiermastercyg.com.ec"
+                           target="_blank"
+                           class="btn-secondary px-8 py-3 rounded-2xl font-semibold text-lg">
+                            Conocer Copiermaster →
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACTO -->
+            <section id="contacto" class="pt-10">
+                <div class="p-10 rounded-2xl bg-[#9cc9ff]/10 border border-[#9cc9ff]/30 backdrop-blur-sm shadow-xl text-center">
+                    <h2 class="text-5xl font-black text-white mb-4">¿Quieres ser el próximo caso de éxito?</h2>
+                    <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                        Si tienes un emprendimiento, escríbeme para evaluar si puedes recibir una página web gratuita.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+
+                        <a href="https://wa.me/593999630862?text=Hola%20Criss%2C%20quiero%20mi%20p%C3%A1gina%20web"
+                           target="_blank"
+                           class="btn-primary px-8 py-4 rounded-2xl font-bold text-xl">
+                            Escríbeme por WhatsApp
+                        </a>
+
+                        <a href="mailto:clombeida@copiermastercyg.com.ec?subject=Solicitud%20para%20p%C3%A1gina%20web%20gratuita&body=Hola%20Criss%2C%20me%20gustar%C3%ADa%20saber%20si%20mi%20emprendimiento%20califica%20para%20la%20p%C3%A1gina%20web%20gratuita.%20Mis%20datos%20son%3A"
+                           target="_blank"
+                           class="btn-secondary px-8 py-4 rounded-2xl font-bold text-xl">
+                            Enviar solicitud por email
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="py-10 border-t border-white/10 text-center mt-8">
+            <p class="text-gray-400 text-sm mb-4">
+                © 2025 Criss Lombeida — LOS NEGOCIOS QUE AYUDAN AL CLIENTE CON SINCERIDAD NUNCA DESAPARECEN, EVOLUCIONAN.
+            </p>
+
+            <div class="flex justify-center space-x-6 text-gray-300 text-xl">
+
+                <a href="https://www.instagram.com/criss_lombeida2?igsh=MWdvbzNvMWF1cTdscA%3D%3D&utm_source=qr"
+                   target="_blank"
+                   class="hover:text-white transition" aria-label="Instagram Criss Lombeida">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/share/1F43fYgXZK/?mibextid=wwXIfr"
+                   target="_blank"
+                   class="hover:text-white transition" aria-label="Facebook Criss Lombeida">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="https://youtube.com/@crisslombeida?si=44fB-GXPEPNRd9WL"
+                   target="_blank"
+                   class="hover:text-white transition" aria-label="YouTube Criss Lombeida">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@copiermaster.cg.e"
+                   target="_blank"
+                   class="hover:text-white transition" aria-label="TikTok Criss Lombeida">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script Parallax -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const linesContainer = document.getElementById('neon-lines');
+            document.body.addEventListener('mousemove', (e) => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 10;
+                const y = (e.clientY / window.innerHeight - 0.5) * 10;
+                linesContainer.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+
+</body>
+</html>
