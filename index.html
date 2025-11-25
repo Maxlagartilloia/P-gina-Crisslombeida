@@ -342,164 +342,254 @@
             </section>
 
             <!-- DIRECTORIO DE PÁGINAS WEB -->
-            <section id="casos" class="pt-10">
-                <div class="text-center mb-8">
-                    <h2 class="text-4xl font-bold text-center text-white mb-3">Directorio de Emprendimientos</h2>
-                    <p class="text-gray-300 max-w-3xl mx-auto text-sm sm:text-base">
-                        Aquí irán todas las páginas web creadas bajo la misión de solidaridad digital.
-                        Esta lista está pensada para crecer hasta <span class="font-semibold text-[#9cc9ff]">1000 emprendimientos en 2026</span>.
-                    </p>
-                </div>
-
-                <!-- Buscador + Filtros -->
-                <div class="max-w-5xl mx-auto mb-6 flex flex-col gap-4 md:flex-row md:items-center">
-                    <div class="flex-1">
-                        <label for="directory-search" class="sr-only">Buscar emprendimiento</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-3 flex items-center text-gray-400 text-sm">
-                                <i class="fa fa-search"></i>
-                            </span>
-                            <input
-                                id="directory-search"
-                                type="text"
-                                placeholder="Buscar por nombre, rubro o palabra clave..."
-                                class="w-full pl-9 pr-3 py-2 rounded-xl bg-[#030916]/80 border border-white/15 text-sm text-gray-100 placeholder:text-gray-500 focus:outline-none focus:border-[#9cc9ff] focus:ring-1 focus:ring-[#9cc9ff]"
-                            >
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap gap-2 justify-center md:justify-end">
-                        <button class="directory-filter-btn directory-filter-btn-active" data-filter="all">Todos</button>
-                        <button class="directory-filter-btn" data-filter="alimentos">Alimentos & Bebidas</button>
-                        <button class="directory-filter-btn" data-filter="servicios">Servicios Profesionales</button>
-                        <button class="directory-filter-btn" data-filter="restaurantes">Restaurantes</button>
-                        <button class="directory-filter-btn" data-filter="eventos">Eventos & Turismo</button>
-                        <button class="directory-filter-btn" data-filter="otros">Otros</button>
-                    </div>
-                </div>
-
-                <!-- LISTA (aquí se pueden ir sumando hasta 1000 items) -->
-                <div id="directory-list" class="space-y-3 max-w-5xl mx-auto">
-
-                    <!-- EJEMPLO 1 -->
-                <article
-    class="directory-item"
-    data-category="alimentos"
-    data-name="valu chocobananas"
-    data-keywords="chocobananas chocolateria snacks dulces postres alimentos"
->
-    <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-            <span class="text-xl">🍌</span>
-            <h3 class="directory-title">Valú Chocobananas</h3>
-        </div>
-        <p class="directory-desc">
-            Chocobananas artesanales y postres fríos, el dulce favorito de la ciudad.
-        </p>
+<!-- ============ DIRECTORIO DE EMPRENDIMIENTOS ============ -->
+<section id="directorio" class="pt-16 pb-20">
+  <div class="max-w-6xl mx-auto">
+    <!-- Título e intro -->
+    <div class="text-center mb-10">
+      <h2 class="text-4xl font-extrabold text-white mb-3">
+        Directorio de Emprendimientos
+      </h2>
+      <p class="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base">
+        Aquí iré registrando los emprendimientos que reciben su página web
+        dentro de la misión de solidaridad digital. Puedes buscar por nombre
+        o filtrar por categoría.
+      </p>
     </div>
 
-    <div class="mt-2 md:mt-0 flex items-center gap-3 shrink-0">
-        <span class="directory-tag">
-            <i class="fa fa-cookie text-[0.6rem]"></i> Bebidas y Alimentos
+    <!-- Filtros + Buscador -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+
+      <!-- Filtros de categoría (SOLO ESTAS 4 + TODOS) -->
+      <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+        <button
+          class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border border-white/20 bg-white/10 text-white hover:bg-white/20 transition active"
+          data-filter="all"
+        >
+          Todos
+        </button>
+
+        <button
+          class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border border-white/10 bg-white/5 text-[#9cc9ff] hover:bg-white/10 transition"
+          data-filter="servicios"
+        >
+          Servicios Profesionales
+        </button>
+
+        <button
+          class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border border-white/10 bg-white/5 text-[#9cc9ff] hover:bg-white/10 transition"
+          data-filter="metalmecanicas"
+        >
+          Metal Mecánicas
+        </button>
+
+        <button
+          class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border border-white/10 bg-white/5 text-[#9cc9ff] hover:bg-white/10 transition"
+          data-filter="alimentos"
+        >
+          Bebidas y Alimentos
+        </button>
+
+        <button
+          class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border border-white/10 bg-white/5 text-[#9cc9ff] hover:bg-white/10 transition"
+          data-filter="tiendas"
+        >
+          Tiendas de Productos
+        </button>
+      </div>
+
+      <!-- Buscador -->
+      <div class="relative max-w-md w-full mx-auto md:mx-0">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">
+          <i class="fa fa-search"></i>
         </span>
-
-        <a href="https://valuchocobananas.crisslombeida.com/"
-           target="_blank"
-           class="directory-link-btn">
-            Ver sitio <i class="fa fa-arrow-up-right-from-square text-xs"></i>
-        </a>
+        <input
+          id="search-directory"
+          type="text"
+          placeholder="Buscar por nombre o palabra clave..."
+          class="w-full pl-9 pr-3 py-2 rounded-full bg-white/5 border border-white/15 text-sm text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9cc9ff]/60 focus:border-transparent"
+        />
+      </div>
     </div>
-</article> 
 
-                    <!-- EJEMPLO 2 -->
-                    <article
-                        class="directory-item"
-                        data-category="servicios"
-                        data-name="cerrajería totti"
-                        data-keywords="soldadura cerrajeria estructuras metalicas seguridad puertas portones"
-                    >
-                        <div class="flex-1 min-w-0">
-                            <div class="flex items-center gap-2 mb-1">
-                                <span class="text-xl" aria-hidden="true">🔐</span>
-                                <h3 class="directory-title">Cerrajería Totti</h3>
-                            </div>
-                            <p class="directory-desc">
-                                Taller especializado en estructuras metálicas, puertas, portones y soldadura profesional con presencia digital estratégica.
-                            </p>
-                        </div>
-                        <div class="mt-2 md:mt-0 flex items-center gap-3 shrink-0">
-                            <span class="directory-tag">
-                                <i class="fa fa-briefcase text-[0.6rem]"></i> Servicios Profesionales
-                            </span>
-                            <a
-                                href="https://cerrajeriatotti.crisslombeida.com/"
-                                target="_blank"
-                                class="directory-link-btn"
-                            >
-                                Ver sitio <i class="fa fa-arrow-up-right-from-square text-xs"></i>
-                            </a>
-                        </div>
-                    </article>
+    <!-- LISTA DE NEGOCIOS -->
+    <div id="directory-list" class="space-y-4">
 
-                    <!-- EJEMPLO 3 -->
-                  <article
-    class="directory-item"
-    data-category="alimentos"
-    data-name="luli gourmet bocaditos"
-    data-keywords="bocaditos dulces salados pasteles snacks bocetería alimentos"
->
-    <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-            <span class="text-xl">🧁</span>
-            <h3 class="directory-title">Luli Gourmet Bocaditos</h3>
+      <!-- ========== CATEGORÍA: BEBIDAS Y ALIMENTOS ========== -->
+      <!-- Valú Chocobananas -->
+      <article
+        class="directory-item flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-4 py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#9cc9ff]/60 hover:bg-white/10 transition"
+        data-category="alimentos"
+        data-name="valu chocobananas"
+        data-keywords="chocobananas banano chocolate dulces helados postres alimentos"
+      >
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xl" aria-hidden="true">🍌</span>
+            <h3 class="directory-title text-base sm:text-lg font-semibold text-white">
+              Valú Chocobananas
+            </h3>
+          </div>
+          <p class="directory-desc text-xs sm:text-sm text-gray-300">
+            Emprendimiento dulce que vende chocobananas y postres fríos para
+            eventos, fiestas y pedidos al por mayor y detalle.
+          </p>
         </div>
-        <p class="directory-desc">
-            Bocaditos dulces y salados para eventos, entregas a domicilio y pedidos personalizados.
-        </p>
-    </div>
 
-    <div class="mt-2 md:mt-0 flex items-center gap-3 shrink-0">
-        <span class="directory-tag">
-            <i class="fa fa-cookie-bite text-[0.6rem]"></i> Bebidas y Alimentos
-        </span>
+        <div class="mt-2 md:mt-0 flex items-center gap-3 shrink-0">
+          <span class="directory-tag inline-flex items-center gap-1 px-3 py-1 rounded-full text-[0.65rem] sm:text-xs bg-white/10 text-[#9cc9ff] border border-[#9cc9ff]/40">
+            <i class="fa fa-cookie-bite text-[0.55rem]"></i>
+            Bebidas y Alimentos
+          </span>
 
-        <a href="https://luligourmetbocaditos.crisslombeida.com/"
-           target="_blank"
-           class="directory-link-btn">
-            Ver sitio <i class="fa fa-arrow-up-right-from-square text-xs"></i>
-        </a>
-    </div>
-</article>
-
-                    <!-- EJEMPLO 4 (EVENTOS, PARA GABY GARZÓN CUANDO ESTÉ LISTO) -->
-                    <article
-    class="directory-item"
-    data-category="alimentos"
-    data-name="punto cero al barril"
-    data-keywords="bbq parrilla costillas carnes restaurante alimentos comidas"
->
-    <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-            <span class="text-xl">🔥</span>
-            <h3 class="directory-title">Punto Cero al Barril</h3>
+          <a
+            href="https://valuchocobananas.crisslombeida.com/"
+            target="_blank"
+            class="directory-link-btn inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-[#081733] hover:bg-[#9cc9ff] hover:text-[#030712] transition"
+          >
+            Ver sitio
+            <i class="fa fa-arrow-up-right-from-square text-[0.6rem]"></i>
+          </a>
         </div>
-        <p class="directory-desc">
-            Costillas, carnes al barril, BBQ y cocina a la brasa con sabor único.
-        </p>
-    </div>
+      </article>
 
-    <div class="mt-2 md:mt-0 flex items-center gap-3 shrink-0">
-        <span class="directory-tag">
-            <i class="fa fa-utensils text-[0.6rem]"></i> Bebidas y Alimentos
-        </span>
+      <!-- Luli Gourmet Bocaditos -->
+      <article
+        class="directory-item flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-4 py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#9cc9ff]/60 hover:bg-white/10 transition"
+        data-category="alimentos"
+        data-name="luli gourmet bocaditos"
+        data-keywords="bocaditos bocaditos luli pasapalos dulces salados catering eventos alimentos"
+      >
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xl" aria-hidden="true">🧁</span>
+            <h3 class="directory-title text-base sm:text-lg font-semibold text-white">
+              Luli Gourmet Bocaditos
+            </h3>
+          </div>
+          <p class="directory-desc text-xs sm:text-sm text-gray-300">
+            Bocaditos dulces y salados para cumpleaños, bautizos, matrimonios,
+            coffee breaks y toda clase de celebraciones.
+          </p>
+        </div>
 
-        <a href="https://puntoceroalbarril.crisslombeida.com/"
-           target="_blank"
-           class="directory-link-btn">
-            Ver sitio <i class="fa fa-arrow-up-right-from-square text-xs"></i>
-        </a>
+        <div class="mt-2 md:mt-0 flex items-center gap-3 shrink-0">
+          <span class="directory-tag inline-flex items-center gap-1 px-3 py-1 rounded-full text-[0.65rem] sm:text-xs bg-white/10 text-[#9cc9ff] border border-[#9cc9ff]/40">
+            <i class="fa fa-cookie-bite text-[0.55rem]"></i>
+            Bebidas y Alimentos
+          </span>
+
+          <a
+            href="https://luligourmetbocaditos.crisslombeida.com/"
+            target="_blank"
+            class="directory-link-btn inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-[#081733] hover:bg-[#9cc9ff] hover:text-[#030712] transition"
+          >
+            Ver sitio
+            <i class="fa fa-arrow-up-right-from-square text-[0.6rem]"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Punto Cero al Barril -->
+      <article
+        class="directory-item flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-4 py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#9cc9ff]/60 hover:bg-white/10 transition"
+        data-category="alimentos"
+        data-name="punto cero al barril"
+        data-keywords="bbq asados barril costillas carnes restaurante bebidas alimentos"
+      >
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xl" aria-hidden="true">🥩</span>
+            <h3 class="directory-title text-base sm:text-lg font-semibold text-white">
+              Punto Cero al Barril
+            </h3>
+          </div>
+          <p class="directory-desc text-xs sm:text-sm text-gray-300">
+            Parrilladas y costillas al barril con un concepto rústico y moderno,
+            ideales para reuniones familiares y de amigos.
+          </p>
+        </div>
+
+        <div class="mt-2 md:mt-0 flex items-center gap-3 shrink-0">
+          <span class="directory-tag inline-flex items-center gap-1 px-3 py-1 rounded-full text-[0.65rem] sm:text-xs bg-white/10 text-[#9cc9ff] border border-[#9cc9ff]/40">
+            <i class="fa fa-wine-glass-alt text-[0.55rem]"></i>
+            Bebidas y Alimentos
+          </span>
+
+          <a
+            href="https://puntoceroalbarril.crisslombeida.com/"
+            target="_blank"
+            class="directory-link-btn inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-[#081733] hover:bg-[#9cc9ff] hover:text-[#030712] transition"
+          >
+            Ver sitio
+            <i class="fa fa-arrow-up-right-from-square text-[0.6rem]"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- ========== CATEGORÍA: METAL MECÁNICAS ========== -->
+      <!-- Cerrajería Totti -->
+      <article
+        class="directory-item flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-4 py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#9cc9ff]/60 hover:bg-white/10 transition"
+        data-category="metalmecanicas"
+        data-name="cerrajeria totti"
+        data-keywords="cerrajeria soldadura metal puertas portones ventanas estructuras metalmecanica"
+      >
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xl" aria-hidden="true">🛠️</span>
+            <h3 class="directory-title text-base sm:text-lg font-semibold text-white">
+              Cerrajería Totti
+            </h3>
+          </div>
+          <p class="directory-desc text-xs sm:text-sm text-gray-300">
+            Puertas, portones, ventanas metálicas y estructuras con soldadura
+            profesional para hogares, negocios e industrias.
+          </p>
+        </div>
+
+        <div class="mt-2 md:mt-0 flex items-center gap-3 shrink-0">
+          <span class="directory-tag inline-flex items-center gap-1 px-3 py-1 rounded-full text-[0.65rem] sm:text-xs bg-white/10 text-[#9cc9ff] border border-[#9cc9ff]/40">
+            <i class="fa fa-industry text-[0.55rem]"></i>
+            Metal Mecánicas
+          </span>
+
+          <a
+            href="https://cerrajeriatotti.crisslombeida.com/"
+            target="_blank"
+            class="directory-link-btn inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-[#081733] hover:bg-[#9cc9ff] hover:text-[#030712] transition"
+          >
+            Ver sitio
+            <i class="fa fa-arrow-up-right-from-square text-[0.6rem]"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- ========== PLANTILLA PARA NUEVOS NEGOCIOS (COPIAR/PEGAR) ========== -->
+      <!--
+      EJEMPLO SERVICIOS PROFESIONALES
+      <article
+        class="directory-item flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-4 py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#9cc9ff]/60 hover:bg-white/10 transition"
+        data-category="servicios"
+        data-name="nombre del profesional"
+        data-keywords="abogado contadora consultoria asesoría profesional servicios"
+      >
+        ...
+      </article>
+
+      EJEMPLO TIENDAS DE PRODUCTOS
+      <article
+        class="directory-item flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-4 py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#9cc9ff]/60 hover:bg-white/10 transition"
+        data-category="tiendas"
+        data-name="nombre de la tienda"
+        data-keywords="ropa calzado tienda productos bazar ecommerce"
+      >
+        ...
+      </article>
+      -->
     </div>
-</article>
+  </div>
+</section>
                     <!-- A PARTIR DE AQUÍ PUEDES IR PEGANDO MÁS <article class="directory-item" ...> HASTA LLEGAR A LOS 1000 :) -->
 
                 </div>
